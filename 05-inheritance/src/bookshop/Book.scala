@@ -1,13 +1,16 @@
 package bookshop
 
 class Product(val title: String, val price: Price) {
-  private var salePercentage = 0.0;
+  private var salePercentage = 0.0
+
   def setSaleDiscount(salePercentage: Double): Unit = {
     this.salePercentage = salePercentage / 100
   }
+
   def calculateSalePrice(): Price = {
-    return price - (price.value * salePercentage)
+    price - (price.value * salePercentage)
   }
+
   override def toString: String = s"$title, $price"
 }
 
@@ -19,14 +22,17 @@ class Entity(name: String)
 
 case class Author(_name: String) extends Entity(_name)
 
-case class Publisher(_name: String, val address: Address) extends Entity(_name)
+case class Publisher(_name: String, address: Address) extends Entity(_name)
 
-case class Address(val number: Int, val street: String, val city: String, val county: String, val postcode: String)
+case class Address(number: Int, street: String, city: String, county: String, postcode: String)
 
 case class Price(value: Double) extends AnyVal {
   def +(d: Double): Price = Price(value + d)
+
   def -(d: Double): Price = Price(value - d)
+
   def *(d: Double): Price = Price(value * d)
+
   def /(d: Double): Price = Price(value / d)
 }
 
