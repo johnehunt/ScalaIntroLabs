@@ -5,13 +5,13 @@ import scala.concurrent._
 import ExecutionContext.Implicits.global
 import scala.util.{Success, Failure}
 
-
 object ShoppingCartApp extends App {
-
 
   val cart = new ShoppingCart()
   cart.add(getBook)
 
+  // Execute the shopping cart total method in a
+  // Future
   val future = Future {
     cart.total()
   }
@@ -25,7 +25,6 @@ object ShoppingCartApp extends App {
   scala.io.StdIn.readLine()
 
   private def getBook(): Book = {
-    val cart = new ShoppingCart()
     val author = Author("Pete Smith")
     val address = Address(10, "High Street", "Salisbury", "Wiltshire", "SL10 34D")
     val publisher = Publisher("Tech Books Publishing Ltd.", address)

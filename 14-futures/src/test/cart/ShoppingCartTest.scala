@@ -1,7 +1,6 @@
 package cart
 
-import bookshop.{Address, Author, Book, Price, Publisher, Technical}
-
+import bookshop._
 import org.scalatest._
 
 class ShoppingCartTest extends FunSpec {
@@ -10,22 +9,19 @@ class ShoppingCartTest extends FunSpec {
     describe("when empty") {
       it("should return true for isEmpty") {
         val cart = new ShoppingCart()
-        assert(cart.isEmpty() == true)
+        assert(cart.isEmpty())
       }
     }
     describe("when one product added") {
       it("should return size = 1") {
         val cart = new ShoppingCart()
-        cart.add(getBook)
+        cart.add(getBook())
         assert(cart.size == 1)
       }
-    }
-
-    describe("when the shopping cart has a book") {
       it("should be possible to calculate the total cost") {
         val cart = new ShoppingCart()
-        cart.add(getBook)
-        val total = cart.total
+        cart.add(getBook())
+        val total = cart.total()
         assert(total == 15.95)
       }
     }
