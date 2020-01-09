@@ -1,7 +1,5 @@
 package bookshop
 
-import scala.util.{Failure, Success}
-
 object BookshopRepository {
   def getBooks(): Map[Genre, List[Book]] = {
     val author = Author("Pete Smith")
@@ -27,7 +25,7 @@ object BookshopRepository {
 
 object Bookshop {
 
-  import scala.util.Try
+  import scala.util.{Try, Failure, Success}
 
   val name: String = "Scala Books of the World"
   val address: Address = Address(26, "Main Street", "Bath", "BANES", "BA1 3ZZ")
