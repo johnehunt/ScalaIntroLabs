@@ -8,7 +8,7 @@ object BookshopApp extends App {
 
 //  Bookshop.printDetails()
 
-  val books = Bookshop.books.get(Technical).get
+  val books = Bookshop.books(Technical)
 
   println("Map example:")
   books.map(b => prettyPrint(b))
