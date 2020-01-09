@@ -9,7 +9,7 @@ class ShoppingCartTest extends FunSpec {
     describe("when empty") {
       it("should return true for isEmpty") {
         val cart = new ShoppingCart()
-        assert(cart.isEmpty() == true)
+        assert(cart.isEmpty())
       }
     }
     describe("when one product added") {
