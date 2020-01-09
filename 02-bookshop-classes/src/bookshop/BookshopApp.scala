@@ -1,5 +1,9 @@
 package bookshop
 
+/**
+ * Extends the Bookshop application such that it creates
+ * a Book and associated instances such as Author, Address etc.
+ */
 object BookshopApp extends App {
   println("Welcome to the Bookshop\n")
 
