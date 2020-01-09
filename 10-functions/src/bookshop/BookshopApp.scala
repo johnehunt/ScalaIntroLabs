@@ -8,7 +8,9 @@ object BookshopApp extends App {
 
   Bookshop.printDetails()
 
-  val books = Bookshop.books.get(Technical).get
-  prettyPrint(books(0))
+  val books = Bookshop.books(Technical)
+  prettyPrint(books.head)
+
+  println("Done")
 
 }
