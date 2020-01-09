@@ -5,4 +5,5 @@ object BookshopApp extends App {
 
   Bookshop.printDetails()
 
+  println("Done")
 }
