@@ -3,8 +3,11 @@ package cart
 import scala.collection.mutable.ListBuffer
 import bookshop.Product
 
+/**
+ * Simplified Shopping Cart class used for testing.
+ */
 class ShoppingCart {
-  val contents = ListBuffer[Product]()
+  val contents: ListBuffer[Product] = ListBuffer[Product]()
 
   def add(product: Product): Unit = {
     contents.addOne(product)
