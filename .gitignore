@@ -50,6 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+out
+target
+.idea
 
 *.iml
 /.idea/
