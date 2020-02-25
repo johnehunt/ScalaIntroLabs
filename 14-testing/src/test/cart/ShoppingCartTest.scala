@@ -1,9 +1,9 @@
 package cart
 
 import bookshop.{Address, Author, Book, Price, Publisher, Technical}
-import org.scalatest._
+import org.scalatest.funspec.AnyFunSpec
 
-class ShoppingCartTest extends FunSpec {
+class ShoppingCartTest extends AnyFunSpec {
 
   describe("A Shopping Cart") {
     describe("when empty") {
