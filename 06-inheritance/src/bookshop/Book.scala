@@ -14,7 +14,7 @@ class Product(val title: String, val price: Price) {
   override def toString: String = s"$title, $price"
 }
 
-class Book(_title: String, _price: Price, val author: Author, val publisher: Publisher, val genre: Object) extends Product(_title, _price) {
+class Book(_title: String, _price: Price, val author: Author, val publisher: Publisher, val genre: AnyRef) extends Product(_title, _price) {
   override def toString: String = s"Book(${super.toString}, $author, Genre: $genre, \n$publisher)"
 }
 
