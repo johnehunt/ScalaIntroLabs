@@ -1,6 +1,6 @@
 package bookshop
 
-class Book(val title: String, val price: Price, val author: Author, val publisher: Publisher, val genre: Object) {
+class Book(val title: String, val price: Price, val author: Author, val publisher: Publisher, val genre: AnyRef) {
   private var salePercentage = 0.0
 
   def setSaleDiscount(salePercentage: Double): Unit = {
