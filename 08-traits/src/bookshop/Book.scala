@@ -9,7 +9,7 @@ trait Sales {
   }
 
   def calculateSalePrice(): Price = {
-    price - (price.value * salePercentage)
+    price - (price * salePercentage)
   }
 }
 
@@ -30,9 +30,9 @@ case class Publisher(_name: String, address: Address) extends Entity(_name)
 case class Address(number: Int, street: String, city: String, county: String, postcode: String)
 
 case class Price(value: Double) extends AnyVal {
-  def +(d: Double): Price = Price(value + d)
+  def +(p: Price): Price = Price(value + p.value)
 
-  def -(d: Double): Price = Price(value - d)
+  def -(p: Price): Price = Price(value - p.value)
 
   def *(d: Double): Price = Price(value * d)
 

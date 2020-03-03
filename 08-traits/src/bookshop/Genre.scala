@@ -3,7 +3,7 @@ package bookshop
 /**
  * Provide a root abstract class for the case objects.
  */
-abstract class Genre
+sealed abstract class Genre
 
 case object Fiction extends Genre
 case object Technical extends Genre
