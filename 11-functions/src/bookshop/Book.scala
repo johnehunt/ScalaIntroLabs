@@ -9,7 +9,7 @@ trait Sales {
   }
 
   def calculateSalePrice(): Price = {
-    price - (price.value * salePercentage)
+    price - (price * salePercentage)
   }
 }
 
