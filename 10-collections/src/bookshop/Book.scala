@@ -7,7 +7,7 @@ trait Sales {
     this.salePercentage = salePercentage / 100
   }
   def calculateSalePrice(): Price = {
-    price - (price.value * salePercentage)
+    price - (price * salePercentage)
   }
 }
 
@@ -32,9 +32,12 @@ trait Printable extends Any {
 }
 
 case class Price(value: Double) extends AnyVal with Printable {
-  def +(d: Double): Price = Price(value + d)
-  def -(d: Double): Price = Price(value - d)
+  def +(p: Price): Price = Price(value + p.value)
+
+  def -(p: Price): Price = Price(value - p.value)
+
   def *(d: Double): Price = Price(value * d)
+
   def /(d: Double): Price = Price(value / d)
 }
 
