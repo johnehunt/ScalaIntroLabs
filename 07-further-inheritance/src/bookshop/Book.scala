@@ -7,7 +7,7 @@ abstract class Product(val title: String, val price: Price) {
     this.salePercentage = salePercentage / 100
   }
   def calculateSalePrice(): Price = {
-    price - (price.value * salePercentage)
+    price - (price * salePercentage)
   }
   override def toString: String = s"$title, $price"
 }
@@ -25,9 +25,12 @@ case class Publisher(_name: String, address: Address) extends Entity(_name)
 case class Address(number: Int, street: String, city: String, county: String, postcode: String)
 
 case class Price(value: Double) extends AnyVal {
-  def +(d: Double): Price = Price(value + d)
-  def -(d: Double): Price = Price(value - d)
+  def +(p: Price): Price = Price(value + p.value)
+
+  def -(p: Price): Price = Price(value - p.value)
+
   def *(d: Double): Price = Price(value * d)
+
   def /(d: Double): Price = Price(value / d)
 }
 
