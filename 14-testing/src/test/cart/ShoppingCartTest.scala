@@ -15,20 +15,19 @@ class ShoppingCartTest extends AnyFunSpec {
     describe("when one product added") {
       it("should return size = 1") {
         val cart = new ShoppingCart()
-        cart.add(getBook)
+        cart.add(getBook())
         assert(cart.size == 1)
       }
       it("should be possible to calculate the total cost") {
         val cart = new ShoppingCart()
-        cart.add(getBook)
-        val total = cart.total
+        cart.add(getBook())
+        val total = cart.total()
         assert(total == 15.95)
       }
     }
   }
 
   private def getBook(): Book = {
-    val cart = new ShoppingCart()
     val author = Author("Pete Smith")
     val address = Address(10, "High Street", "Salisbury", "Wiltshire", "SL10 34D")
     val publisher = Publisher("Tech Books Publishing Ltd.", address)
