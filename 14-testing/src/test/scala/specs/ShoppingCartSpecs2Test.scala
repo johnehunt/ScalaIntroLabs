@@ -1,13 +1,13 @@
 package specs
 
-import bookshop.{Address, Author, Book, Price, Publisher, Technical}
+import bookshop._
 import cart.ShoppingCart
 import org.specs2.mutable._
 
 class ShoppingCartSpecs2Test extends Specification {
 
   "A Shopping Cart" should {
-    "return true for isEmpty" in {
+    "be emtpy when initially created" in {
       val cart = new ShoppingCart()
       cart.size() must beEqualTo(0)
     }

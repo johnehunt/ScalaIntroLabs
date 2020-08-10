@@ -1,28 +1,30 @@
 package specs
 
-import bookshop.{Address, Author, Book, Price, Publisher, Technical}
+import bookshop._
 import cart.ShoppingCart
 import org.specs2._
 
-class ShoppingCartAcceptanceSpec extends Specification { def is = s2"""
+class ShoppingCartAcceptanceSpec extends Specification {
+
+  def is = s2"""
 
  This is a specification to check the Shopping Cart
 
  The Shopping Cart string should
-   be empty when first created                                   $e1
-   hold one item when added                                      $e2
-   should calculate the price of the shopping cart               $e3
+   be empty when first created                                   $r1
+   hold one item when added                                      $r2
+   should calculate the price of the shopping cart               $r3
                                                                  """
-  def e1 = {
+  def r1 = {
     val cart = new ShoppingCart()
     cart.size() must beEqualTo(0)
   }
-  def e2 = {
+  def r2 = {
     val cart = new ShoppingCart()
     cart.add(getBook())
     cart.size() must beEqualTo(1)
   }
-  def e3 = {
+  def r3 = {
     val cart = new ShoppingCart()
     cart.add(getBook())
     val total = cart.total()
