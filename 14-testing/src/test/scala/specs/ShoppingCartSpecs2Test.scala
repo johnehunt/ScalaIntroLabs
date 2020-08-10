@@ -7,7 +7,7 @@ import org.specs2.mutable._
 class ShoppingCartSpecs2Test extends Specification {
 
   "A Shopping Cart" should {
-    "be emtpy when initially created" in {
+    "be empty when initially created" in {
       val cart = new ShoppingCart()
       cart.size() must beEqualTo(0)
     }
