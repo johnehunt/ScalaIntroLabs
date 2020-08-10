@@ -19,7 +19,7 @@ object BookshopRepository {
 object Bookshop {
   val name: String = "Scala Books of the World"
   val address: Address = new Address(26, "Main Street", "Bath", "BANES", "BA1 3ZZ")
-  val books = BookshopRepository.getBooks()
+  val books: Book = BookshopRepository.getBooks()
 
   def printDetails(): Unit = {
     println(s"name: $name")
