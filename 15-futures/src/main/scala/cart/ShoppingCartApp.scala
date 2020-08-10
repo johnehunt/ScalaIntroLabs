@@ -8,7 +8,7 @@ import scala.util.{Success, Failure}
 object ShoppingCartApp extends App {
 
   val cart = new ShoppingCart()
-  cart.add(getBook)
+  cart.add(getBook())
 
   // Execute the shopping cart total method in a
   // Future
