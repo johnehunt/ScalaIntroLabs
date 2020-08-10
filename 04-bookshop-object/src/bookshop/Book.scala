@@ -1,7 +1,7 @@
 package bookshop
 
 class Book(val title: String, val price: Double, val author: Author, val publisher: Publisher) {
-  private var salePercentage = 0.0;
+  private var salePercentage = 0.0
   def setSaleDiscount(salePercentage: Double): Unit = {
     this.salePercentage = salePercentage / 100
   }
