@@ -37,7 +37,7 @@ class ControllerActor extends Actor {
 }
 
 object ControllerActor {
-  def props: Props = Props(classOf[ControllerActor])
+  def props: Props = Props(new ControllerActor())
 }
 
 object ActorResponseApp extends App {
