@@ -6,7 +6,7 @@ class Book(val title: String, val price: Double, val author: Author, val publish
     this.salePercentage = salePercentage / 100
   }
   def calculateSalePrice(): Double = {
-    return price - (price * salePercentage)
+    price - (price * salePercentage)
   }
   override def toString: String = s"Book($title, $price, $author, \n$publisher)"
 }
