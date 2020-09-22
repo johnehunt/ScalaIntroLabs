@@ -1,8 +1,8 @@
-name := "15-akka-helloworld-sbt"
+scalaVersion := "2.13.3"
 
-version := "1.0"
-
-scalaVersion := "2.13.1"
+name := "XX5-akka-helloworld-sbt"
+organization := "com.jjh"
+version := "1.0.0"
 
 lazy val akkaVersion = "2.6.3"
 
