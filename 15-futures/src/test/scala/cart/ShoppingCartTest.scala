@@ -28,7 +28,6 @@ class ShoppingCartTest extends FunSpec {
   }
 
   private def getBook(): Book = {
-    val cart = new ShoppingCart()
     val author = Author("Pete Smith")
     val address = Address(10, "High Street", "Salisbury", "Wiltshire", "SL10 34D")
     val publisher = Publisher("Tech Books Publishing Ltd.", address)
