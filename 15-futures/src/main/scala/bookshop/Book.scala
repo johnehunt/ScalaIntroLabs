@@ -26,7 +26,7 @@ class Book(_title: String, _price: Price, val author: Author, val publisher: Pub
   override def toString: String = s"Book(${super.toString}, $author, Genre: $genre, \n$publisher)"
 }
 
-abstract class Entity(name: String)
+abstract class Entity(val name: String)
 
 case class Author(_name: String) extends Entity(_name)
 
