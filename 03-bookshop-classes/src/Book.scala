@@ -1,15 +1,14 @@
-package bookshop
+// Classes for the book
 
 class Book(val title: String,
            val price: Double,
            val author: Author,
            val publisher: Publisher) {
 
-  private var salePercentage = 0.0
+  private var salePercentage: Double = 0.0
 
-  def setSaleDiscount(salePercentage: Double): Unit = {
+  def setSaleDiscount(salePercentage: Double): Unit =
     this.salePercentage = salePercentage / 100
-  }
 
   def calculateSalePrice(): Double = price - (price * salePercentage)
 
@@ -31,4 +30,3 @@ class Address(val number: Int,
               val postcode: String) {
   override def toString: String = s"$number $street,\n$city,\n$county,\n$postcode"
 }
-
