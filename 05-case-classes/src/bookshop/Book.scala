@@ -5,6 +5,7 @@ class Book(val title: String,
            val author: Author,
            val publisher: Publisher,
            val genre: AnyRef) {
+
   private var salePercentage = 0.0
 
   def setSaleDiscount(salePercentage: Double): Unit = {
