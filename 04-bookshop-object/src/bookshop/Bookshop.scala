@@ -18,8 +18,7 @@ object Bookshop {
     val author = new Author("Pete Smith")
     val address = new Address(10, "High Street", "Salisbury", "Wiltshire", "SL10 34D")
     val publisher = new Publisher("Tech Books Publishing Ltd.", address)
-    val book = new Book("Scala Unleashed", 15.95, author, publisher)
-    book
+    new Book("Scala Unleashed", 15.95, author, publisher)
   }
 
 }
