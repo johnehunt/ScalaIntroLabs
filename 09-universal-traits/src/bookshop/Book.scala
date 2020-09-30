@@ -1,6 +1,7 @@
 package bookshop
 
-abstract class Product(val title: String, val price: Price) extends Sales {
+abstract class Product(val title: String,
+                       val price: Price) extends Sales {
   override def toString: String = s"$title, $price"
 }
 
