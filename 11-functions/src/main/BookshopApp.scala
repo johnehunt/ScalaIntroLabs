@@ -1,4 +1,6 @@
-package bookshop
+package main
+
+import bookshop.{Book, Bookshop, Technical}
 
 object BookshopApp extends App {
 

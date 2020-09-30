@@ -1,4 +1,6 @@
-package bookshop
+package main
+
+import bookshop.{Book, Bookshop, Technical}
 
 object BookshopApp extends App {
 
@@ -6,7 +8,7 @@ object BookshopApp extends App {
 
   println("Welcome to the Bookshop\n")
 
-//  Bookshop.printDetails()
+  //  Bookshop.printDetails()
 
   val books = Bookshop.books(Technical)
 
