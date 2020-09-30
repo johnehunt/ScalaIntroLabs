@@ -1,6 +1,8 @@
 package bookshop
 
-class Product(val title: String, val price: Price) {
+class Product(val title: String,
+              val price: Price) {
+
   private var salePercentage = 0.0
 
   def setSaleDiscount(salePercentage: Double): Unit = {
@@ -14,7 +16,11 @@ class Product(val title: String, val price: Price) {
   override def toString: String = s"$title, $price"
 }
 
-class Book(_title: String, _price: Price, val author: Author, val publisher: Publisher, val genre: AnyRef) extends Product(_title, _price) {
+class Book(_title: String,
+           _price: Price,
+           val author: Author,
+           val publisher: Publisher,
+           val genre: Genre) extends Product(_title, _price) {
   override def toString: String = s"Book(${super.toString}, $author, Genre: $genre, \n$publisher)"
 }
 

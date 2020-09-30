@@ -1,7 +1,9 @@
 package bookshop
 
-case object Fiction
-case object Technical
-case object History
-case object Detective
-case object Biography
+class Genre
+
+case object Fiction extends Genre
+case object Technical extends Genre
+case object History extends Genre
+case object Detective extends Genre
+case object Biography extends Genre
