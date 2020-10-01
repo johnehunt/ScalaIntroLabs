@@ -25,5 +25,4 @@ object BookshopApp extends App {
 
   println("Filter and foreach example")
   books.filter(b => b.price.value < 15.0).foreach(b => prettyPrint(b))
-
 }
