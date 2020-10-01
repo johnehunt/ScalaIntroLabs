@@ -21,9 +21,9 @@ trait Printable extends Any {
 }
 
 case class Price(value: Double) extends AnyVal with Printable {
-  def +(d: Double): Price = Price(value + d)
+  def +(d: Price): Price = Price(value + d.value)
 
-  def -(d: Double): Price = Price(value - d)
+  def -(d: Price): Price = Price(value - d.value)
 
   def *(d: Double): Price = Price(value * d)
 
