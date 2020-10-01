@@ -10,7 +10,7 @@ object BookshopApp extends App {
 
   //  Bookshop.printDetails()
 
-  val books = Bookshop.books(Technical)
+  val books = Bookshop.books.getOrElse(Technical, Nil)
 
   println("Map example:")
   books.map(b => prettyPrint(b))
