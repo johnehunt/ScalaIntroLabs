@@ -42,12 +42,14 @@ object Bookshop {
 
   // Alternative approach
   val books2: Map[Genre, List[Book]] =
-    Try(
+    Try {
       BookshopRepository.getBooks()
-    ) recover {
+    } recover {
       case _: BookshopException =>
         Map[Genre, List[Book]](Technical -> List())
-    } get
+    } match {
+      case Success(mapOfBooks) => mapOfBooks
+    }
 
   println("-" * 30)
   println(s"Loaded books: $books")
