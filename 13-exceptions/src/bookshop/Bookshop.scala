@@ -53,7 +53,7 @@ object Bookshop {
       case Success(mapOfBooks) => mapOfBooks
     }
 
-  // Shortest form where not corned about notifying error
+  // Shortest form where not concerned about notifying the error
   val books3: Map[Genre, List[Book]] =
     Try(BookshopRepository.getBooks())
       .getOrElse(Map[Genre, List[Book]](Technical -> List()))
