@@ -30,26 +30,33 @@ object Bookshop {
   val name: String = "Scala Books of the World"
   val address: Address = Address(26, "Main Street", "Bath", "BANES", "BA1 3ZZ")
 
+  // Functional Exception handling style
   val books: Map[Genre, List[Book]] =
     Try {
       BookshopRepository.getBooks()
     } match {
       case Success(mapOfBooks) => mapOfBooks
       case Failure(e) =>
-        println(s"Exception: $e")
+        println(s"Exception occurred: $e")
         Map[Genre, List[Book]](Technical -> List())
     }
 
-  // Alternative approach
+  // Alternative approach - slightly more functional approach
   val books2: Map[Genre, List[Book]] =
     Try {
       BookshopRepository.getBooks()
     } recover {
-      case _: BookshopException =>
+      case e: BookshopException =>
+        println(s"Exception occurred: $e")
         Map[Genre, List[Book]](Technical -> List())
     } match {
       case Success(mapOfBooks) => mapOfBooks
     }
+
+  // Shortest form where not corned about notifying error
+  val books3: Map[Genre, List[Book]] =
+    Try(BookshopRepository.getBooks())
+      .getOrElse(Map[Genre, List[Book]](Technical -> List()))
 
   println("-" * 30)
   println(s"Loaded books: $books")
