@@ -27,12 +27,15 @@ class ShoppingCartTest extends AnyFunSpec {
     }
   }
 
+  /**
+   * Private method used to support the tests
+   * in this class.
+   */
   private def getBook(): Book = {
     val author = Author("Pete Smith")
     val address = Address(10, "High Street", "Salisbury", "Wiltshire", "SL10 34D")
     val publisher = Publisher("Tech Books Publishing Ltd.", address)
-    val book = new Book("Scala Unleashed", Price(15.95), author, publisher, Technical)
-    book
+    new Book("Scala Unleashed", Price(15.95), author, publisher, Technical)
   }
 
 }
