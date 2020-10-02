@@ -14,9 +14,7 @@ object ShoppingCartApp extends App {
   // Future
   val future = Future {
     cart.total()
-  }
-
-  future onComplete {
+  } onComplete {
     case Success(total) => println(s"Success : $total")
     case Failure(e) => println(s"An error occurred $e")
   }
