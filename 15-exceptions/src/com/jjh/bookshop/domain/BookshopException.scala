@@ -1,4 +1,4 @@
-package bookshop
+package com.jjh.bookshop.domain
 
 /**
  * Exception class for use with the Bookshop
