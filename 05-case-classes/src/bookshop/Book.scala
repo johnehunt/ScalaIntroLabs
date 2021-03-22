@@ -4,7 +4,7 @@ class Book(val title: String,
            val price: Price,
            val author: Author,
            val publisher: Publisher,
-           val genre: AnyRef) {
+           val genre: Any) {
 
   private var salePercentage = 0.0
 
@@ -27,13 +27,14 @@ case class Address(number: Int,
                    county: String,
                    postcode: String)
 
-case class Price(value: Double) extends AnyVal {
+case class Price(value: Double) {
   def +(p: Price): Price = Price(value + p.value)
-
   def -(p: Price): Price = Price(value - p.value)
 
-  def *(d: Double): Price = Price(value * d)
+  def +(p: Double): Price = Price(value + p)
+  def -(p: Double): Price = Price(value - p)
 
+  def *(d: Double): Price = Price(value * d)
   def /(d: Double): Price = Price(value / d)
 }
 
