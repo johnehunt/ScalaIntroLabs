@@ -1,4 +1,4 @@
-package com.jjh
+package com.jjh.actor
 
 import akka.actor._
 
