@@ -1,4 +1,4 @@
-package cart
+package com.jjh.bookshop.cart
 
 import bookshop._
 import org.scalatest._
