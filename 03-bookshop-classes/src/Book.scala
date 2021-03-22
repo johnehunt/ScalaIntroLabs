@@ -1,7 +1,7 @@
 // Classes for the book
 
 class Book(val title: String,
-           val price: Double,
+           var price: Double,
            val author: Author,
            val publisher: Publisher) {
 
@@ -19,7 +19,8 @@ class Author(val name: String) {
   override def toString: String = name
 }
 
-class Publisher(val name: String, val address: Address) {
+class Publisher(val name: String,
+                var address: Address) {
   override def toString: String = s"$name,\n$address"
 }
 
