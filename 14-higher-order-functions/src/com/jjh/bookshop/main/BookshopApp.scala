@@ -1,6 +1,6 @@
 package com.jjh.bookshop.main
 
-import bookshop.{Book, Bookshop, Technical}
+import com.jjh.bookshop.domain._
 
 object BookshopApp extends App {
 
@@ -25,4 +25,10 @@ object BookshopApp extends App {
 
   println("Filter and foreach example")
   books.filter(b => b.price.value < 15.0).foreach(b => prettyPrint(b))
+
+  println("-" * 25)
+  // Extension Point
+  Bookshop.applyToGenre(Technical, prettyPrint)
+  Bookshop.applyToGenre(Technical, (b: Book) => println(b))
+
 }

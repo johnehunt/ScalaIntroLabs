@@ -1,6 +1,6 @@
-package bookshop
+package com.jjh.bookshop.domain
 
-abstract class Genre
+sealed trait Genre
 
 case object Fiction extends Genre
 case object Technical extends Genre

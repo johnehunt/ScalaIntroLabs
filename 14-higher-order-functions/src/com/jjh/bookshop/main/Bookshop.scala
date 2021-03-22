@@ -1,24 +1,26 @@
-package bookshop
+package com.jjh.bookshop.main
+
+import com.jjh.bookshop.domain._
 
 object BookshopRepository {
   def getBooks(): Map[Genre, List[Book]] = {
     val author = Author("Pete Smith")
     val address = Address(10, "High Street", "Salisbury", "Wiltshire", "SL10 34D")
     val publisher = Publisher("Tech Books Publishing Ltd.", address)
-    val technicalBooks = List(new Book("Scala Unleashed", Price(15.95), author, publisher, Technical),
-      new Book("Python in the Wild", Price(12.55), Author("Joe Jones"), publisher, Technical))
+    val technicalBooks = List(new Book("Scala Unleashed", Price(15.95), Some(author), publisher, Technical),
+      new Book("Python in the Wild", Price(12.55), Some(Author("Joe Jones")), publisher, Technical))
 
     val historicalPublisher = Publisher("Historical Books Are Us", Address(5, "The Estate", "Market Town", "Hampshire", "HA3 4RR"))
-    val historyBooks = List(new Book("The Wars of the Roses Retold", Price(12.34), Author("Pete Andrews"), historicalPublisher, History))
+    val historyBooks = List(new Book("The Wars of the Roses Retold", Price(12.34), Some(Author("Pete Andrews")), historicalPublisher, History))
 
     val fictionPublisher = Publisher("Adriana Books", Address(340, "Long Mile Road", "Swindon", "Wiltshire", "SN12 6ER"))
-    val fictionBooks = List(new Book("It was a Dark Night", Price(23.55), Author("Gryff Cooke"), fictionPublisher, Fiction))
+    val fictionBooks = List(new Book("It was a Dark Night", Price(23.55), Some(Author("Gryff Cooke")), fictionPublisher, Fiction))
 
     val books = Map[Genre, List[Book]](Technical -> technicalBooks,
       History -> historyBooks,
       Fiction -> fictionBooks)
 
-    // Return the books
+    // Returning the books collection
     books
   }
 }
@@ -32,6 +34,14 @@ object Bookshop {
     println(s"name: $name")
     println(s"address: $address")
     println(s"Books: $books")
+  }
+
+  def applyToGenre(genre: Genre, func: Book => Unit): Unit = {
+    val genreBooksOption = books.get(genre)
+    if (genreBooksOption != None) {
+      val genreBooks = genreBooksOption.get
+      genreBooks.foreach(b => func(b))
+    }
   }
 
 }
