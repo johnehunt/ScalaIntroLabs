@@ -6,6 +6,7 @@ object Bookshop {
   val book: Book = setupBook()
 
   def printDetails(): Unit = {
+    println(s"Welcome today is ${DaysOfWeek.Tuesday}")
     println(s"name: $name")
     println(s"address: $address")
     println(s"Book: $book")
