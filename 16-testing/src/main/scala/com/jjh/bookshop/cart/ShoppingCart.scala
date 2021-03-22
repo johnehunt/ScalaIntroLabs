@@ -1,4 +1,4 @@
-package cart
+package com.jjh.bookshop.cart
 
 import scala.collection.mutable.ListBuffer
 import bookshop.Product

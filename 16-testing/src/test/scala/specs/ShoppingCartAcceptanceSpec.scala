@@ -1,7 +1,7 @@
 package specs
 
 import bookshop._
-import cart.ShoppingCart
+import com.jjh.bookshop.cart.ShoppingCart
 import org.specs2._
 
 class ShoppingCartAcceptanceSpec extends Specification {

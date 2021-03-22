@@ -1,4 +1,4 @@
-package cart
+package com.jjh.bookshop.cart
 
 import bookshop.{Address, Author, Book, Price, Publisher, Technical}
 import org.scalatest.funspec.AnyFunSpec
