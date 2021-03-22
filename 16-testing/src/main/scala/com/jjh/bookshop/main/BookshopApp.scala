@@ -1,4 +1,4 @@
-package main
+package com.jjh.bookshop.main
 
 import bookshop.{Book, Bookshop, Technical}
 

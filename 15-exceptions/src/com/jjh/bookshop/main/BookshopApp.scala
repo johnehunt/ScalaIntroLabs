@@ -1,4 +1,4 @@
-package main
+package com.jjh.bookshop.main
 
 import bookshop.{Book, Bookshop, Technical}
 
@@ -8,11 +8,16 @@ object BookshopApp extends App {
 
   println("Welcome to the Bookshop\n")
 
-  Bookshop.printDetails()
+  //  Bookshop.printDetails()
 
   val books = Bookshop.books(Technical)
-  prettyPrint(books.head)
 
-  println("Done")
+  println("Map example:")
+  books.map(b => prettyPrint(b))
+
+  println("Filter example:")
+  val filteredList = books.filter(b => b.price.value < 15.0)
+  println(filteredList)
+
 
 }
