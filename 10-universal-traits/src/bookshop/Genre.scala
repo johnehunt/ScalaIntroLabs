@@ -1,6 +1,6 @@
 package bookshop
 
-sealed abstract class Genre
+sealed trait Genre
 
 case object Fiction extends Genre
 case object Technical extends Genre

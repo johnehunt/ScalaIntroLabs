@@ -5,7 +5,7 @@ object BookshopApp extends App {
 
   Bookshop.printDetails()
 
-  Bookshop.books.price.print()
+  Bookshop.book.price.print()
 
   println("Done")
 }
