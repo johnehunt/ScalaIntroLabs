@@ -18,10 +18,10 @@ class Product(val title: String,
 
 class Book(_title: String,
            _price: Price,
-           val author: Author,
+           val author: Option[Author],
            val publisher: Publisher,
            val genre: Genre) extends Product(_title, _price) {
-  override def toString: String = s"Book(${super.toString}, $author, Genre: $genre, \n$publisher)"
+  override def toString: String = s"Book(${super.toString}, ${author.getOrElse("Anonymous")}, Genre: $genre, \n$publisher)"
 }
 
 class Entity(val name: String)
@@ -32,13 +32,14 @@ case class Publisher(_name: String, address: Address) extends Entity(_name)
 
 case class Address(number: Int, street: String, city: String, county: String, postcode: String)
 
-case class Price(value: Double) extends AnyVal {
+case class Price(value: Double) {
   def +(p: Price): Price = Price(value + p.value)
-
   def -(p: Price): Price = Price(value - p.value)
 
-  def *(d: Double): Price = Price(value * d)
+  def +(p: Double): Price = Price(value + p)
+  def -(p: Double): Price = Price(value - p)
 
+  def *(d: Double): Price = Price(value * d)
   def /(d: Double): Price = Price(value / d)
 }
 
