@@ -1,9 +1,9 @@
 package bookshop
 
 /**
- * Provide a root abstract class for the case objects.
+ * Provide a root trait for the case objects.
  */
-trait Genre
+sealed trait Genre
 
 case object Fiction extends Genre
 case object Technical extends Genre
