@@ -37,11 +37,9 @@ object Bookshop {
   }
 
   def applyToGenre(genre: Genre, func: Book => Unit): Unit = {
-    val genreBooksOption = books.get(genre)
-    if (genreBooksOption != None) {
-      val genreBooks = genreBooksOption.get
-      genreBooks.foreach(b => func(b))
-    }
+    books
+      .getOrElse(genre, Nil)
+      .foreach(func)
   }
 
 }
