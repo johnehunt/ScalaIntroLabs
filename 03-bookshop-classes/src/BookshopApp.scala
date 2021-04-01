@@ -13,6 +13,7 @@ object BookshopApp extends App {
 
   println("\nCalculating the Sales Discount price")
   book.setSaleDiscount(10.0)
+
   println(s"Sale price of book: ${book.calculateSalePrice()}")
 
   println(f"Sale price of book: ${book.calculateSalePrice()}%.2f")

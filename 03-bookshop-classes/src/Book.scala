@@ -7,10 +7,13 @@ class Book(val title: String,
 
   private var salePercentage: Double = 0.0
 
-  def setSaleDiscount(salePercentage: Double): Unit =
-    this.salePercentage = salePercentage / 100
+  def setSaleDiscount(discount: Double): Unit = {
+    salePercentage = discount / 100
+  }
 
-  def calculateSalePrice(): Double = price - (price * salePercentage)
+  def calculateSalePrice(): Double = {
+    price - (price * salePercentage)
+  }
 
   override def toString: String = s"Book($title, $price, $author, \n$publisher)"
 }
