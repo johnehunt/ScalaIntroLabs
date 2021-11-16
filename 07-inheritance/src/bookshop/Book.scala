@@ -13,7 +13,7 @@ class Product(val title: String,
     price - (price * salePercentage)
   }
 
-  override def toString: String = s"$title, $price"
+  override def toString(): String = s"$title, $price"
 }
 
 class Book(_title: String,
@@ -21,7 +21,7 @@ class Book(_title: String,
            val author: Option[Author],
            val publisher: Publisher,
            val genre: Genre) extends Product(_title, _price) {
-  override def toString: String = s"Book(${super.toString}, ${author.getOrElse("Anonymous")}, Genre: $genre, \n$publisher)"
+  override def toString(): String = s"Book(${super.toString}, ${author.getOrElse("Anonymous")}, Genre: $genre, \n$publisher)"
 }
 
 class Entity(val name: String)

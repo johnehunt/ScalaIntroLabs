@@ -14,7 +14,7 @@ class Book(val title: String,
 
   def calculateSalePrice(): Double = price - (price * salePercentage)
 
-  override def toString: String = s"Book($title, $price, ${author.getOrElse("Anonymous")}, \n$publisher)"
+  override def toString(): String = s"Book($title, $price, ${author.getOrElse("Anonymous")}, \n$publisher)"
 }
 
 class Author(val name: String) {
@@ -23,7 +23,7 @@ class Author(val name: String) {
 
 class Publisher(val name: String,
                 var address: Address) {
-  override def toString: String = s"$name,\n$address"
+  override def toString(): String = s"$name,\n$address"
 }
 
 class Address(val number: Int,

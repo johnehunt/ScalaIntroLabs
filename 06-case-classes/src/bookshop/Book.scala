@@ -14,7 +14,7 @@ class Book(val title: String,
 
   def calculateSalePrice(): Price = price - (price * salePercentage)
 
-  override def toString: String = s"Book($title, $price, ${author.getOrElse("Anonymous")}, Genre: $genre, \n$publisher)"
+  override def toString(): String = s"Book($title, $price, ${author.getOrElse("Anonymous")}, Genre: $genre, \n$publisher)"
 }
 
 case class Author(name: String)

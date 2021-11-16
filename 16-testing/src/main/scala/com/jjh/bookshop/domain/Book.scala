@@ -19,7 +19,7 @@ abstract class Product(val title: String, val price: Price) extends Sales {
     throw new BookshopException(s"Invalid price: $price")
   }
 
-  override def toString: String = s"$title, $price"
+  override def toString(): String = s"$title, $price"
 }
 
 class Book(_title: String,
@@ -27,7 +27,7 @@ class Book(_title: String,
            val author: Option[Author],
            val publisher: Publisher,
            val genre: Genre) extends Product(_title, _price) {
-  override def toString: String = s"Book(${super.toString}, ${author.getOrElse("Anonymous")}, Genre: $genre, \n$publisher)"
+  override def toString(): String = s"Book(${super.toString}, ${author.getOrElse("Anonymous")}, Genre: $genre, \n$publisher)"
 }
 
 abstract class Entity(val name: String)
