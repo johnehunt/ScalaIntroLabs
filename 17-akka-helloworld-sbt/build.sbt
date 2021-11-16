@@ -1,6 +1,6 @@
-scalaVersion := "2.13.6"
+scalaVersion := "2.13.7"
 
-name := "XX5-akka-helloworld-sbt"
+name := "17-akka-helloworld-sbt"
 organization := "com.jjh"
 version := "1.0.0"
 

@@ -1,4 +1,4 @@
-scalaVersion := "2.13.6"
+scalaVersion := "2.13.7"
 
 name := "01-helloworld-sbt"
 organization := "com.jjh"
