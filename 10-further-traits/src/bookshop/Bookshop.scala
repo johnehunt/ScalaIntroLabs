@@ -1,12 +1,14 @@
-package bookshop
-
 object Bookshop {
+
+  import DaysOfWeek._
+
   val name: String = "Scala Books of the World"
   val address: Address = Address(26, "Main Street", "Bath", "BANES", "BA1 3ZZ")
   val book: Book = setupBook()
+  val today: WeekDay = Tuesday
 
   def printDetails(): Unit = {
-    println(s"Welcome today is ${DaysOfWeek.Tuesday}")
+    println(s"Welcome today is ${today}")
     println(s"name: $name")
     println(s"address: $address")
     println(s"Book: $book")
