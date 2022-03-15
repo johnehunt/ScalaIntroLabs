@@ -7,6 +7,8 @@ class Book(val title: String,
            val author: Option[Author],
            val publisher: Publisher) {
 
+  def this(title: String, price: Double, author: Author, publisher: Publisher) = this(title, price, Some(author), publisher)
+
   private var salePercentage: Double = 0.0
 
   def setSaleDiscount(salePercentage: Double): Unit =
@@ -15,6 +17,20 @@ class Book(val title: String,
   def calculateSalePrice(): Double = price - (price * salePercentage)
 
   override def toString(): String = s"Book($title, $price, ${author.getOrElse("Anonymous")}, \n$publisher)"
+
+
+  override def equals(other: Any): Boolean = other match {
+    case that: Book =>
+      title == that.title &&
+        author == that.author &&
+        publisher == that.publisher
+    case _ => false
+  }
+
+  override def hashCode(): Int = {
+    val state = Seq(title, author, publisher)
+    state.map(_.hashCode()).foldLeft(0)((a, b) => 31 * a + b)
+  }
 }
 
 class Author(val name: String) {
