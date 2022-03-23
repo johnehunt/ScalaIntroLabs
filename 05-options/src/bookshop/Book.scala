@@ -7,7 +7,8 @@ class Book(val title: String,
            val author: Option[Author],
            val publisher: Publisher) {
 
-  def this(title: String, price: Double, author: Author, publisher: Publisher) = this(title, price, Some(author), publisher)
+  def this(title: String, price: Double, author: Author, publisher: Publisher) =
+    this(title, price, Some(author), publisher)
 
   private var salePercentage: Double = 0.0
 
