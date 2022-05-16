@@ -8,7 +8,7 @@ import akka.actor._
 class HelloWorldActor extends Actor {
   override def receive: Receive = {
     case "Hello" => println("Hello World")
-    case "Goodbye" => println("Goodby World")
+    case "Goodbye" => println("Goodbye World")
     case _ => println ("another Message")
   }
 }
