@@ -1,6 +1,7 @@
 package com.jjh.bookshop.main
 
 import com.jjh.bookshop.domain._
+import scala.collection.immutable.HashMap
 
 object BookshopRepository {
   def getBooks(): Map[Genre, List[Book]] = {
@@ -17,7 +18,7 @@ object BookshopRepository {
     val fictionPublisher = Publisher("Adriana Books", Address(340, "Long Mile Road", "Swindon", "Wiltshire", "SN12 6ER"))
     val fictionBooks = List(new Book("It was a Dark Night", Price(23.55), Some(Author("Gryff Cooke")), fictionPublisher, Fiction))
 
-    val books = Map[Genre, List[Book]](
+    val books = HashMap[Genre, List[Book]](
       Technical -> technicalBooks,
       History -> historyBooks,
       Fiction -> fictionBooks)

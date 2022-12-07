@@ -34,7 +34,7 @@ case class Publisher(_name: String, address: Address) extends Entity(_name)
 case class Address(number: Int, street: String, city: String, county: String, postcode: String)
 
 trait Printable {
-  self => Price
+  self: Price =>
   def print(): Unit = println(this)
 }
 

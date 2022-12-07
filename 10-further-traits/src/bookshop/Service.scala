@@ -5,7 +5,7 @@ class Service(val title: String,
               val provider: String,
               val maintenance: WeekDay=Sunday) extends Sales {
 
-  override def toString = s"Game($provider) - ${super.toString()}"
+  override def toString = s"Service($provider) - ${super.toString()}"
 
   override def equals(other: Any): Boolean = other match {
     case that: Service =>

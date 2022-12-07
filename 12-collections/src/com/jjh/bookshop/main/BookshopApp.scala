@@ -5,5 +5,12 @@ object BookshopApp extends App {
 
   Bookshop.printDetails()
 
+  val techBooks = Bookshop.books.getOrElse(Technical, Nil)
+  if (techBooks != Nil) {
+    val book = techBooks.head
+    book.setSaleDiscount(10.0)
+    println(book.calculateSalePrice())
+  }
+
   println("Done")
 }
