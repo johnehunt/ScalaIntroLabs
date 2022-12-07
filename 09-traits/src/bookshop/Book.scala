@@ -15,6 +15,9 @@ trait Sales {
 
 abstract class Product(val title: String, val price: Price) extends Sales {
   override def toString(): String = s"$title, $price"
+
+  override def hashCode(): Int =
+    name.hashCode() + price.hashCode()
 }
 
 class Book(_title: String,
