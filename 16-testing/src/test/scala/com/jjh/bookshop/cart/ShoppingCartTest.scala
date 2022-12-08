@@ -35,7 +35,7 @@ class ShoppingCartTest extends AnyFunSpec {
         val book = getBook()
         cart.get.add(book)
         cart.get.remove(book)
-        assert(cart.size == 0)
+        assert(cart.get.isEmpty())
       }
     }
   }
