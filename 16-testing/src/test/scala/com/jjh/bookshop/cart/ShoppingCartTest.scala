@@ -5,40 +5,41 @@ import org.scalatest.funspec.AnyFunSpec
 
 class ShoppingCartTest extends AnyFunSpec {
 
-  private var cart: ShoppingCart = null
+  private var cart: Option[ShoppingCart] = None
 
   override def beforeEach(): Unit = {
-    cart = new ShoppingCart()
+    cart = Some(new ShoppingCart())
   }
 
   override def afterEach(): Unit = {
-    cart = null
+    cart = None
   }
 
   describe("A Shopping Cart") {
     describe("when empty") {
       it("should return true for isEmpty") {
-        assert(cart.isEmpty())
+        assert(cart.get.isEmpty())
       }
     }
     describe("when one product added") {
       it("should return size = 1") {
-        cart.add(getBook())
+        cart.get.add(getBook())
         assert(cart.size == 1)
       }
       it("should be possible to calculate the total cost") {
-        cart.add(getBook())
-        val total = cart.total()
+        cart.get.add(getBook())
+        val total = cart.get.total()
         assert(total == 15.95)
       }
       it("should be possible to remove that product") {
         val book = getBook()
-        cart.add(book)
-        cart.remove(book)
+        cart.get.add(book)
+        cart.get.remove(book)
         assert(cart.size == 0)
       }
     }
   }
+
 
   /**
    * Private method used to support the tests
